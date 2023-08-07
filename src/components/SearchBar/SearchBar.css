@@ -1,0 +1,8 @@
+.SearchBar {
+  display: flex;
+  flex-direction: column;
+}
+
+.SearchBar input {
+  border-radius: 5px;
+}
