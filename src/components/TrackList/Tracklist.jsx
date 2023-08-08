@@ -1,3 +1,5 @@
+import "./TrackList.css";
+
 export default function Tracklist() {
   const tracks = [
     {songName: "Blind", artist: "Korn", album: "Korn", id: 1},
@@ -7,19 +9,24 @@ export default function Tracklist() {
   ];
 
   const lista = tracks.map(track => 
-    <>
-      <h3>
-        {track.songName}
-      </h3>
-      <p>
-        {track.artist}
-      </p>
-    </>
+    <div className="trackContainer">
+      <div className="trackInfo">
+        <h3>
+          {track.songName}
+        </h3>
+        <p>
+          {track.artist} | {track.album}
+        </p>
+      </div>
+      <div>
+        <button className="addBtn">+</button>
+      </div>
+    </div>
     
   )
 
   return (
-    <div>
+    <div className="Tracklist">
       {lista}
     </div>
   )

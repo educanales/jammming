@@ -1,0 +1,22 @@
+.Tracklist {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  gap: 1rem;
+}
+
+.trackContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.trackInfo {
+  text-align: start;
+}
+
+.addBtn {
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+}
