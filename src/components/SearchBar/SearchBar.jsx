@@ -4,7 +4,7 @@ export default function SearchBar() {
 
   return (
     <div className="SearchBar">
-      <input type="search" placeholder="Enter a song title or an Artist" />
+      <input type="search" placeholder="Enter a song title" />
       <button>Search</button>
     </div>    
   )
