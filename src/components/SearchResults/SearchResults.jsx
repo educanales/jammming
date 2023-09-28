@@ -1,13 +1,12 @@
-
+/* eslint-disable react/prop-types */
 import Tracklist from '../TrackList/Tracklist';
 
-export default function SearchResults() {
+export default function SearchResults({ filteredTrack }) {
 
   return (
     <>
       <div className='container'>
-        <Tracklist />
-        
+        <Tracklist filteredTrack={filteredTrack} />
       </div>
     </>
   )
