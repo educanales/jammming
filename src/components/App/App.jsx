@@ -7,6 +7,7 @@ import Playlist from '../Playlist/Playlist'
 export default function App() {
   const [searchItem, setSearchItem] = useState('');
   const [filteredTrack, setFilteredTrack] = useState(tracks);
+  const [playlist, setPlaylist] = useState([]);
 
   const handleInputChange = (event) => {
     const searchTerm = event.target.value;
@@ -20,6 +21,13 @@ export default function App() {
     setFilteredTrack(filteredSongs);
   }
 
+  const handleAddToPlaylist = (trackToAdd) => {
+    setPlaylist([
+      ...playlist,
+      filteredTrack.filter(track => track.id === trackToAdd)
+    ])
+  }
+
   return (
     <>
       <h1>Jammming</h1>
@@ -28,8 +36,8 @@ export default function App() {
         onChange={handleInputChange}
       />
       <div className='mainContainer'>
-        <SearchResults filteredTrack={filteredTrack} />
-        <Playlist />
+        <SearchResults filteredTrack={filteredTrack} onClick={handleAddToPlaylist}/>
+        <Playlist playlist={playlist}/>
       </div>
     </>
   )

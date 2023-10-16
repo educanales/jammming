@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import "./TrackList.css";
 
-export default function Tracklist({ filteredTrack }) {
+export default function Tracklist({ filteredTrack, onClick }) {
   
   const lista = filteredTrack.map(track => 
     <div className="trackContainer" key={track.id}>
@@ -14,10 +14,9 @@ export default function Tracklist({ filteredTrack }) {
         </p>
       </div>
       <div>
-        <button className="addBtn">+</button>
+        <button className="addBtn" onClick={() => onClick(track.id)}>+</button>
       </div>
-    </div>
-    
+    </div>    
   )
 
   return (
